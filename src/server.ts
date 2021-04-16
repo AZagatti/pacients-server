@@ -13,7 +13,7 @@ const errorHandler: ErrorRequestHandler = (error, _, res, __) => {
   return res.status(500).json({ message: "Internal server error" });
 };
 
-const PORT = 3333;
+const PORT = process.env.NODE_ENV === "production" ? 5621 : 3333;
 const main = async () => {
   const conn = await createConnection({
     type: "sqlite",

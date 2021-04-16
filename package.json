@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
-    "start": "node ./dist/server.js",
+    "start": "NODE_ENV=production node ./dist/server.js",
     "dev": "ts-node-dev --no-notify --inspect --transpile-only --ignore-watch node_modules src/server.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
     "migration": "ts-node-dev ./node_modules/typeorm/cli.js migration:run --config src/config/ormconfig.ts"
